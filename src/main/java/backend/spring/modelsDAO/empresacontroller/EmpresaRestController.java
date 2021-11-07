@@ -22,25 +22,25 @@ import backend.spring.modelentity.Empresa;
 public class EmpresaRestController {
 	@Autowired
 	private IEmpresaService empresaservice;
-	@GetMapping("/decoradores")
+	@GetMapping("/empresas")
 	public List<Empresa> findAll(){
 		return empresaservice.findAll();
 	}
-	@PostMapping("/decoradores")
+	@PostMapping("/empresas")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Empresa guardar(@RequestBody Empresa d) {
 		return empresaservice.save(d);
 	}
-	@DeleteMapping("/decoradores/{id}")
+	@DeleteMapping("/empresas/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void borrar (@PathVariable Long nit) {
 		empresaservice.delete(nit);
 	}
-	@GetMapping("/decoradores/{id}")
+	@GetMapping("/empresas/{id}")
 	public Empresa encontrarporId(@PathVariable Long nit) {
 		return empresaservice.searchById(nit);
 	}
-	@PutMapping("/estudiantes/{id}")
+	@PutMapping("/empresas/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public Empresa actualizar(@PathVariable Long nit, @RequestBody Empresa e) {
 		Empresa actual = empresaservice.searchById(nit);

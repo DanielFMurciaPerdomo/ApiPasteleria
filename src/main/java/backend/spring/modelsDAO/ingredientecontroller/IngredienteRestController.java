@@ -22,25 +22,25 @@ import backend.spring.modelentity.Ingrediente;
 public class IngredienteRestController {
 	@Autowired
 	private IIngredienteService ingredienteservice;
-	@GetMapping("/Ingredientes")
+	@GetMapping("/ingredientes")
 	public List<Ingrediente> listarIngredientes(){
 		return ingredienteservice.findAll();
 	}
-	@PostMapping("/Ingredientes")
+	@PostMapping("/ingredientes")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Ingrediente guardar(@RequestBody Ingrediente e) {
 		return ingredienteservice.save(e);
 	}
-	@DeleteMapping("/Ingredientes/{id}")
+	@DeleteMapping("/ingredientes/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void borrar (@PathVariable String id) {
 		ingredienteservice.delete(id);
 	}
-	@GetMapping("/Ingredientes/{id}")
+	@GetMapping("/ingredientes/{id}")
 	public Ingrediente encontrarPorId(@PathVariable String id) {
 		return ingredienteservice.searchById(id);
 	}
-	@PutMapping("/Ingredientes/{id}")
+	@PutMapping("/ingredientes/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public Ingrediente actualizar(@PathVariable String id, @RequestBody Ingrediente e) {
 		Ingrediente actual = ingredienteservice.searchById(id);

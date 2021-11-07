@@ -22,25 +22,25 @@ import backend.spring.pastelservice.IPastelService;
 public class PastelRestController {
 	@Autowired
 	private IPastelService pastelservice;
-	@GetMapping("/Pastels")
+	@GetMapping("/pasteles")
 	public List<Pastel> listarPastels(){
 		return pastelservice.findAll();
 	}
-	@PostMapping("/Pastels")
+	@PostMapping("/pasteles")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Pastel guardar(@RequestBody Pastel e) {
 		return pastelservice.save(e);
 	}
-	@DeleteMapping("/Pastels/{id}")
+	@DeleteMapping("/pasteles/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void borrar (@PathVariable Long id) {
 		pastelservice.delete(id);
 	}
-	@GetMapping("/Pastels/{id}")
+	@GetMapping("/pasteles/{id}")
 	public Pastel encontrarPorId(@PathVariable Long id) {
 		return pastelservice.searchById(id);
 	}
-	@PutMapping("/Pastels/{id}")
+	@PutMapping("/pasteles/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public Pastel actualizar(@PathVariable Long id, @RequestBody Pastel e) {
 		Pastel actual = pastelservice.searchById(id);
