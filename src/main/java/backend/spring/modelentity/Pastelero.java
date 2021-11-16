@@ -19,7 +19,7 @@ public class Pastelero implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long codigo;
+	private Long codigoPast;
 	@Column
 	private String nombre;
 	@Column
@@ -31,11 +31,11 @@ public class Pastelero implements Serializable {
 	@Column
 	private int experiencia;
 	
-	public Long getCodigo() {
-		return codigo;
+	public Long getCodigoPast() {
+		return codigoPast;
 	}
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setCodigoPast(Long codigoPast) {
+		this.codigoPast = codigoPast;
 	}
 	public String getNombre() {
 		return nombre;
