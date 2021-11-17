@@ -19,7 +19,7 @@ public class Pastel implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long codigo;
+	private Long codigoP;
 	@Column
 	private String nombre;
 	@Column
@@ -32,11 +32,11 @@ public class Pastel implements Serializable {
 	private String fechaEntrega;
 	@Column
 	private String descripcion;
-	public Long getCodigo() {
-		return codigo;
+	public Long getCodigoP() {
+		return codigoP;
 	}
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setCodigoP(Long codigoP) {
+		this.codigoP = codigoP;
 	}
 	public String getNombre() {
 		return nombre;

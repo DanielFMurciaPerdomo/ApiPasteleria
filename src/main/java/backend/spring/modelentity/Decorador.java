@@ -19,17 +19,17 @@ public class Decorador implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long codigo;
+	private Long codigoDec;
 	@Column
 	private String nombre;
 	@Column
 	private double salario;
 	
-	public Long getCodigo() {
-		return codigo;
+	public Long getCodigoDec() {
+		return codigoDec;
 	}
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setCodigoDec(Long codigoDec) {
+		this.codigoDec = codigoDec;
 	}
 	public String getNombre() {
 		return nombre;

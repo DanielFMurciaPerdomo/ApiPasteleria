@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,28 +20,29 @@ import backend.spring.personaservice.IPersonaService;
 
 @RestController
 @RequestMapping("/pasteleria")
+@CrossOrigin(origins="*", allowedHeaders="*")
 public class PersonaRestController {
 	@Autowired
 	private IPersonaService personaservice;
-	@GetMapping("/Personas")
+	@GetMapping("/personas")
 	public List<Persona> listarPersonas(){
 		return personaservice.findAll();
 	}
-	@PostMapping("/Personas")
+	@PostMapping("/personas")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Persona guardar(@RequestBody Persona e) {
 		return personaservice.save(e);
 	}
-	@DeleteMapping("/Personas/{id}")
+	@DeleteMapping("/personas/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void borrar (@PathVariable Long id) {
 		personaservice.delete(id);
 	}
-	@GetMapping("/Personas/{id}")
+	@GetMapping("/personas/{id}")
 	public Persona encontrarPorId(@PathVariable Long id) {
 		return personaservice.searchById(id);
 	}
-	@PutMapping("/Personas/{id}")
+	@PutMapping("/personas/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public Persona actualizar(@PathVariable Long id, @RequestBody Persona e) {
 		Persona actual = personaservice.searchById(id);
