@@ -26,6 +26,8 @@ public class Decoracion implements Serializable{
 	private String fechaHoraFin;
 	@Column
 	private double pesoFinal;
+	@Column
+	private String decorador;
 	
 	public Long getCodigoDecor() {
 		return codigoDecor;
@@ -50,6 +52,12 @@ public class Decoracion implements Serializable{
 	}
 	public void setPesoFinal(double pesoFinal) {
 		this.pesoFinal = pesoFinal;
+	}
+	public String getDecorador() {
+		return decorador;
+	}
+	public void setDecorador(String decorador) {
+		this.decorador = decorador;
 	}
 	
 }

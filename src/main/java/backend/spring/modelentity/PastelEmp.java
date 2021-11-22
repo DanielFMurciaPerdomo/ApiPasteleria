@@ -32,6 +32,8 @@ public class PastelEmp implements Serializable {
 	private String fechaEntrega;
 	@Column
 	private String descripcion;
+	@Column
+	private String empleado;
 	public Long getCodigoPa() {
 		return codigoPa;
 	}
@@ -74,4 +76,11 @@ public class PastelEmp implements Serializable {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	public String getEmpleado() {
+		return empleado;
+	}
+	public void setEmpleado(String empleado) {
+		this.empleado = empleado;
+	}
+	
 }

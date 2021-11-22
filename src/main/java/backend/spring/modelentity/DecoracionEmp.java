@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="decoraciones")
+@Table(name="decoracionesemp")
 public class DecoracionEmp implements Serializable{
 
 	/**
@@ -26,6 +26,8 @@ public class DecoracionEmp implements Serializable{
 	private String fechaHoraFin;
 	@Column
 	private double pesoFinal;
+	@Column
+	private String decorador;
 	
 	public Long getCodigoDecore() {
 		return codigoDecore;
@@ -51,4 +53,11 @@ public class DecoracionEmp implements Serializable{
 	public void setPesoFinal(double pesoFinal) {
 		this.pesoFinal = pesoFinal;
 	}
+	public String getDecorador() {
+		return decorador;
+	}
+	public void setDecorador(String decorador) {
+		this.decorador = decorador;
+	}
+	
 }
